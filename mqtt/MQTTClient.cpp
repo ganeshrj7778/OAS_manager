@@ -338,11 +338,12 @@ bool MQTTClient::publishOASData(
        << correlation
        << "}";
 
-    std::string payload =
-        ss.str();
+    std::string payload = ss.str();
 
-    std::string topic =
-        "UUV/sensor/OAS/" + oasId;
+    std::cout << ss.str()
+              << std::endl;
+
+    std::string topic = "UUV/sensor/OAS/" + oasId;
 
     int rc =
         mosquitto_publish(
